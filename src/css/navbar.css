@@ -1,0 +1,184 @@
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  /*--accent-color: #149ddd;  Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --contrast-color: #ffffff; /* The contrast color is used for elements when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors */
+}
+:root {
+  --nav-color: #a8a9b4;  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #149ddd; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+:root {
+  --header-background-color: #040b14;
+  --header-color: #ffffff;
+}
+:root {
+  --navbar-width: 300px; /* Navbar width for desktop */
+}
+
+body {
+  font-family: var(--default-font);
+  color: var(--default-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--navbar-width);
+  background-color: var(--header-background-color);
+  color: var(--header-color);
+  overflow-y: auto;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.header.header-show {
+  left: 0;
+}
+
+.header .profile-img img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  border-radius: 50%;
+}
+
+.header .logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+  color: var(--heading-color);
+}
+
+.header .social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.navicon{
+  font-size: 20px;
+  margin-right: 10px;
+}
+.header .social-links a {
+  color: var(--default-color);
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+}
+
+.header .social-links a:hover {
+  background: deepskyblue;
+  color: #ffffff;
+}
+
+.navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navmenu ul li {
+  margin: 10px 0;
+}
+
+.navmenu ul li a {
+  color: #a8a9b4;
+  padding: 10px 15px;
+  display: block;
+  font-size: 19px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif ; /*var(--nav-font)*/
+  transition: color 0.3s;
+}
+
+.navmenu ul li a:hover {
+  color: deepskyblue;
+  /* background-color: deepskyblue; */
+}
+.sitename h1{
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+.header-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: deepskyblue;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.header-toggle:hover {
+  background-color: color-mix(in srgb, deepskyblue, transparent 90%);
+  color: #ffffff !important;
+}
+.header-toggle svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.header .social-links a {
+  color: #ffffff !important;
+  /* background-color: #149ddd; */
+  background: color-mix(in srgb, #ffffff, transparent 90%);
+}
+i{
+  color: #ffffff !important;
+}
+@media (min-width: 1200px) {
+  .header {
+    left: 0;
+  }
+  .main {
+    margin-left: var(--navbar-width); /* Adjust content spacing dynamically */
+  }
+  .header-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header~main {
+    margin-left: 0;
+  }
+  .header {
+    left: -100%;
+    transition: left 0.3s ease-in-out; /* Smooth transition for sliding in/out */
+  }
+  .header-show {
+    left: 0;
+  }
+}

@@ -1,0 +1,95 @@
+.about-section {
+  margin-left: 300px; /* Space reserved for the navbar */
+  padding: 20px; /* Optional: Add padding for content */
+  transition: margin-left 0.3s ease-in-out; /* Smooth adjustment for mobile view */
+}
+.abouthead{
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #272829;
+}
+.abouthead::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #149ddd;
+  left: 0;
+  right: 0;
+  top: 45px;
+}
+.aboutcontent{
+  color: #272829;
+  overflow: clip;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: sans-serif;
+  animation: fadeInUp 3s ease-out; /* Applies the animation */
+}
+img.myprofile{
+  width: 20em;
+  height: 350px;
+  margin: 15px 0px;
+}
+.myprofilecontent h2{
+  font-weight: 700;
+  font-size: 27px;
+  color: #050d18;
+  font-family: sans-serif;
+}
+.myprofilecontent p{
+  font-size: 18px;
+}
+.aboutme{
+  font-style: italic;
+}
+.chevron{
+  color: #149ddd;
+  font-size: 24px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Starts 20px below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Ends at the original position */
+  }
+}
+
+@media (max-width: 1199px) {
+  .about-section {
+    margin-left: 0; /* Content takes full width when navbar is toggled in mobile view */
+  }
+  .abouthead{
+    font-size: 27px;
+  }
+  .aboutcontent{
+    font-size: 16px;
+  }
+  .myprofilecontent h2{
+    font-size: 19px;
+  }
+  .myprofilecontent p{
+    font-size: 16px;
+  }
+  .personaldetails{
+    font-size: 15px;
+  }
+  .personaldetails p{
+    font-size: 15px;
+  }
+}
+
+@media (max-width : 768px) {
+  img.myprofile{
+    display: block;
+    margin: 0px auto;
+  }
+}
